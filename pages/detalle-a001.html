@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>LuxTime — Detalle Modelo A001</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/detalle.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <a class="logo" href="/">LuxTime</a>
+        <button class="hamburguesa" id="btnHamburguesa" aria-label="Abrir menú">
+          ☰
+        </button>
+        <nav class="menu" id="menu">
+          <a href="/">Inicio</a>
+          <a href="/pages/catalogo.html">Catálogo</a>
+          <a href="/pages/historia.html">Historia</a>
+          <a href="/pages/contacto.html">Contacto</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="detalle">
+        <div class="visor">
+          <img
+            src="/images/A001/reloj-0101.png"
+            alt="Modelo A001 color 1"
+            class="img1"
+          />
+          <img
+            src="/images/A001/reloj-0102.png"
+            alt="Modelo A001 color 2"
+            class="img2"
+          />
+          <img
+            src="/images/A001/reloj-0103.png"
+            alt="Modelo A001 color 3"
+            class="img3"
+          />
+          <span class="grabado-texto"></span>
+        </div>
+
+        <div class="info">
+          <h1>Modelo A001</h1>
+          <p class="precio">$250</p>
+          <p class="descripcion">
+            Reloj de lujo con caja de acero inoxidable y cristal de zafiro.
+            Diseñado para quienes buscan elegancia y precisión.
+          </p>
+          <ul>
+            <li>Material: Acero inoxidable</li>
+            <li>Tamaño: 42 mm</li>
+            <li>Peso: 150 g</li>
+          </ul>
+          <p><strong>Opciones de personalización:</strong></p>
+          <input type="radio" name="color" id="color1" checked />
+          <input type="radio" name="color" id="color2" />
+          <input type="radio" name="color" id="color3" />
+          <div class="opciones">
+            <label for="color1" style="background: #000"></label>
+            <label for="color2" style="background: #c49a6c"></label>
+            <label for="color3" style="background: #444"></label>
+          </div>
+          <div class="grabado">
+            <h4>Personaliza tu grabado</h4>
+
+            <input type="radio" name="grabado" id="grabado1" checked />
+            <input type="radio" name="grabado" id="grabado2" />
+            <input type="radio" name="grabado" id="grabado3" />
+
+            <div class="opciones-grabado">
+              <label for="grabado1">“Mi Estilo”</label>
+              <label for="grabado2">“Edición Limitada”</label>
+              <label for="grabado3">“Para Siempre”</label>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="relacionados">
+        <h2>Productos relacionados</h2>
+        <input type="radio" name="slide" id="slide1" checked />
+        <input type="radio" name="slide" id="slide2" />
+        <input type="radio" name="slide" id="slide3" />
+
+        <div class="carrusel-contenedor">
+          <div class="carrusel-btn izquierda">
+            <label for="slide3">❮</label>
+            <label for="slide1">❮</label>
+            <label for="slide2">❮</label>
+          </div>
+          <div class="carrusel">
+            <div class="grupo">
+              <a href="/pages/detalle-a002.html" class="item">
+                <img src="/images/A002/reloj-0201.png" alt="Modelo A002" />
+                <h3>Modelo A002</h3>
+              </a>
+              <a href="/pages/detalle-b001.html" class="item">
+                <img src="/images/B001/reloj-0501.png" alt="Modelo B001" />
+                <h3>Modelo B001</h3>
+              </a>
+              <a href="/pages/detalle-c001.html" class="item">
+                <img src="/images/C001/reloj-0901.png" alt="Modelo C001" />
+                <h3>Modelo C001</h3>
+              </a>
+            </div>
+
+            <div class="grupo">
+              <a href="/pages/detalle-a002.html" class="item">
+                <img src="/images/A002/reloj-0201.png" alt="Modelo A002" />
+                <h3>Modelo A002</h3>
+              </a>
+              <a href="/pages/detalle-b001.html" class="item">
+                <img src="/images/B001/reloj-0501.png" alt="Modelo B001" />
+                <h3>Modelo B001</h3>
+              </a>
+              <a href="/pages/detalle-c001.html" class="item">
+                <img src="/images/C001/reloj-0901.png" alt="Modelo C001" />
+                <h3>Modelo C001</h3>
+              </a>
+            </div>
+
+            <div class="grupo">
+              <a href="/pages/detalle-a002.html" class="item">
+                <img src="/images/A002/reloj-0201.png" alt="Modelo A002" />
+                <h3>Modelo A002</h3>
+              </a>
+              <a href="/pages/detalle-b001.html" class="item">
+                <img src="/images/B001/reloj-0501.png" alt="Modelo B001" />
+                <h3>Modelo B001</h3>
+              </a>
+              <a href="/pages/detalle-c001.html" class="item">
+                <img src="/images/C001/reloj-0901.png" alt="Modelo C001" />
+                <h3>Modelo C001</h3>
+              </a>
+            </div>
+          </div>
+
+          <div class="carrusel-btn derecha">
+            <label for="slide2">❯</label>
+            <label for="slide3">❯</label>
+            <label for="slide1">❯</label>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer-container">
+        <div>LuxTime © 2025</div>
+        <div>contacto@luxtime.com</div>
+      </div>
+    </footer>
+  </body>
+</html>

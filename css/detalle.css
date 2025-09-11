@@ -1,0 +1,480 @@
+/* ===================== GLOBAL ===================== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Lato", sans-serif;
+  color: #111;
+  background: #f7f7f7;
+}
+
+/* ===================== CONTAINERS ===================== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ===================== HEADER ===================== */
+.header {
+  background: rgba(255, 255, 255, 0.95);
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  border-bottom: 1px solid #eee;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.3rem;
+  text-decoration: none;
+  color: #111;
+  padding: 14px 0;
+  display: inline-block;
+}
+
+.menu a {
+  color: #111;
+  text-decoration: none;
+  margin-left: 18px;
+  font-weight: 500;
+}
+
+.hamburguesa {
+  display: none;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #111;
+}
+
+/* ===================== DETALLE PRODUCTO ===================== */
+.detalle {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.visor {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.visor img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+}
+
+.detalle:has(#color1:checked) .visor:hover .img1,
+.detalle:has(#color2:checked) .visor:hover .img2,
+.detalle:has(#color3:checked) .visor:hover .img3 {
+  transform: scale(1.05);
+}
+
+input[name="color"] {
+  display: none;
+}
+
+.opciones {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.opciones label {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  cursor: pointer;
+  transition: transform 0.3s, border 0.3s;
+}
+
+.opciones label:hover {
+  transform: scale(1.1);
+}
+
+#color1:checked ~ .opciones label[for="color1"],
+#color2:checked ~ .opciones label[for="color2"],
+#color3:checked ~ .opciones label[for="color3"] {
+  border: 3px solid #111;
+}
+
+.detalle:has(#color1:checked) .visor .img1,
+.detalle:has(#color2:checked) .visor .img2,
+.detalle:has(#color3:checked) .visor .img3 {
+  opacity: 1;
+}
+
+/* ===================== INFO ===================== */
+.info h1 {
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+.info .precio {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.info .descripcion {
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.info ul {
+  padding-left: 20px;
+  margin-bottom: 30px;
+}
+
+/* ===================== GRABADO ===================== */
+.grabado-texto {
+  position: absolute;
+  bottom: 10%;
+  right: 43%;
+  z-index: 6;
+  pointer-events: none;
+  font-family: "Courier New", monospace;
+  font-size: 0.95rem;
+  rotate: 90deg;
+}
+
+.grabado-texto::after {
+  content: "";
+  display: inline-block;
+  transform: translate(-50%, -50%);
+  font-family: "Cinzel", serif;
+  font-size: 0.7rem;
+  color: rgba(0, 0, 0, 0.5);
+  letter-spacing: 1px;
+  pointer-events: none;
+  background: none;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.3), 0 -1px 1px rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+}
+
+.detalle:has(#grabado1:checked) .grabado-texto::after {
+  content: "Mi Estilo";
+  opacity: 1;
+}
+.detalle:has(#grabado2:checked) .grabado-texto::after {
+  content: "Edición Limitada";
+  opacity: 1;
+}
+.detalle:has(#grabado3:checked) .grabado-texto::after {
+  content: "Para Siempre";
+  opacity: 1;
+}
+
+input[name="grabado"] {
+  display: none;
+}
+
+.opciones-grabado {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.opciones-grabado label {
+  padding: 10px 16px;
+  border: 1.5px solid #ccc;
+  border-radius: 30px;
+  background: #fff;
+  color: #333;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.opciones-grabado label:hover {
+  border-color: #999;
+  transform: translateY(-2px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+}
+
+#grabado1:checked ~ .opciones-grabado label[for="grabado1"],
+#grabado2:checked ~ .opciones-grabado label[for="grabado2"],
+#grabado3:checked ~ .opciones-grabado label[for="grabado3"] {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* ===================== RELACIONADOS ===================== */
+.relacionados {
+  width: 90%;
+  margin: 3rem auto;
+}
+
+.relacionados h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  color: #333;
+}
+
+/* ===================== CARRUSEL ===================== */
+input[name="slide"] {
+  display: none;
+}
+
+.carrusel-contenedor {
+  position: relative;
+  overflow: hidden;
+}
+
+.carrusel {
+  display: flex;
+  width: 300%;
+  transition: transform 0.6s ease;
+}
+
+.grupo {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  width: 100%;
+  flex: 0 0 100%;
+}
+
+.item {
+  flex: 0 0 250px;
+  text-align: center;
+  background: #f9f9f9;
+  border-radius: 15px;
+  padding: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.item img {
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.item:hover img {
+  transform: scale(1.05);
+}
+
+.item h3 {
+  margin-top: 0.8rem;
+  font-size: 1.1rem;
+  color: #333;
+}
+
+/* ---------------- FLECHAS ---------------- */
+.carrusel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.carrusel-btn label {
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  color: #333;
+  font-size: 2rem;
+  line-height: 40px;
+  text-align: center;
+  cursor: pointer;
+  pointer-events: all;
+  transition: background 0.3s;
+}
+
+.carrusel-btn label:hover {
+  background: #fff;
+}
+
+.carrusel-btn.izquierda label,
+.carrusel-btn.derecha label {
+  display: none;
+}
+
+#slide1:checked ~ .carrusel-contenedor .carrusel {
+  transform: translateX(0%);
+}
+#slide2:checked ~ .carrusel-contenedor .carrusel {
+  transform: translateX(-50%);
+}
+#slide3:checked ~ .carrusel-contenedor .carrusel {
+  transform: translateX(-200%);
+}
+
+#slide1:checked ~ .carrusel-contenedor .izquierda label:nth-child(1),
+#slide2:checked ~ .carrusel-contenedor .izquierda label:nth-child(2),
+#slide3:checked ~ .carrusel-contenedor .izquierda label:nth-child(3),
+#slide1:checked ~ .carrusel-contenedor .derecha label:nth-child(1),
+#slide2:checked ~ .carrusel-contenedor .derecha label:nth-child(2),
+#slide3:checked ~ .carrusel-contenedor .derecha label:nth-child(3) {
+  display: block;
+}
+
+/* ===================== FOOTER ===================== */
+.footer {
+  background: #111;
+  color: #fff;
+  padding: 32px 0;
+  margin-top: 28px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  padding: 0 20px;
+}
+
+.footer-container a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* ===================== MEDIA QUERIES ===================== */
+
+/* ------------------- MÓVILES PEQUEÑOS (max-width: 480px) ------------------- */
+@media (max-width: 480px) {
+  .detalle {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .visor {
+    aspect-ratio: auto;
+    height: 300px;
+  }
+
+  .info h1 {
+    font-size: 1.6rem;
+  }
+  .info .precio {
+    font-size: 1.2rem;
+  }
+  .info .descripcion {
+    font-size: 0.9rem;
+  }
+
+  .opciones label {
+    width: 24px;
+    height: 24px;
+  }
+  .opciones-grabado label {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+  }
+
+  .grabado-texto {
+    font-size: 0.8rem;
+    right: 5%;
+    bottom: 7%;
+  }
+  .grabado-texto::after {
+    font-size: 0.6rem;
+  }
+
+  .item {
+    flex: 0 0 180px;
+  }
+}
+
+/* ------------------- TABLET (max-width: 768px) ------------------- */
+@media (max-width: 768px) {
+  .detalle {
+    grid-template-columns: 1fr;
+  }
+
+  .hamburguesa {
+    display: block;
+  }
+
+  .menu {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+    padding: 12px;
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 99;
+  }
+
+  .menu a {
+    margin: 0;
+    padding: 8px;
+    font-weight: 500;
+    color: #111;
+    display: block;
+  }
+
+  .menu.activo {
+    display: flex;
+  }
+
+  .grabado-texto {
+    right: 6%;
+    bottom: 8%;
+    font-size: 0.9rem;
+  }
+
+  .grabado-texto::after {
+    padding: 6px 10px;
+  }
+}
+
+/* ------------------- DESKTOP MEDIO (max-width: 1024px) ------------------- */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 15px;
+  }
+
+  .detalle {
+    gap: 30px;
+  }
+
+  .item {
+    flex: 0 0 220px;
+  }
+
+  .relacionados {
+    width: 95%;
+  }
+
+  .visor {
+    border-radius: 10px;
+  }
+}
