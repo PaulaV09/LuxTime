@@ -225,119 +225,78 @@ input[name="grabado"] {
 
 /* ===================== RELACIONADOS ===================== */
 .relacionados {
-  width: 90%;
-  margin: 3rem auto;
+  margin-top: 3rem;
 }
 
 .relacionados h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: #0b1a2b;
   text-align: center;
-  margin-bottom: 1.5rem;
-  font-size: 1.8rem;
-  color: #333;
 }
 
-/* ===================== CARRUSEL ===================== */
-input[name="slide"] {
+
+/* ocultar radios del carrusel */
+.relacionados input {
   display: none;
 }
 
-.carrusel-contenedor {
-  position: relative;
-  overflow: hidden;
-}
-
-.carrusel {
+.carrusel-css {
   display: flex;
-  width: 300%;
-  transition: transform 0.6s ease;
+  width: 200%; /* 2 páginas */
+  transition: transform .5s ease;
 }
 
 .grupo {
-  display: flex;
-  gap: 2rem;
-  justify-content: center;
   width: 100%;
-  flex: 0 0 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 0.5rem;
+  margin-left: 18rem;
+  margin-right: 18rem;
+  transition: transform 0.6s ease;
+}
+.grupo article:hover img {
+  transform: scale(1.03);
+}
+.grupo img {
+  width: 15rem;
 }
 
-.item {
-  flex: 0 0 250px;
-  text-align: center;
-  background: #f9f9f9;
-  border-radius: 15px;
-  padding: 1rem;
-  transition: transform 0.3s ease;
-}
 
-.item img {
-  width: 100%;
-  border-radius: 10px;
-  transition: transform 0.3s ease;
-}
 
-.item:hover img {
-  transform: scale(1.05);
-}
-
-.item h3 {
-  margin-top: 0.8rem;
-  font-size: 1.1rem;
-  color: #333;
-}
-
-/* ---------------- FLECHAS ---------------- */
-.carrusel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  pointer-events: none;
-}
-
-.carrusel-btn label {
-  background: rgba(255, 255, 255, 0.7);
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  color: #333;
-  font-size: 2rem;
-  line-height: 40px;
-  text-align: center;
-  cursor: pointer;
-  pointer-events: all;
-  transition: background 0.3s;
-}
-
-.carrusel-btn label:hover {
+.grupo article {
   background: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, .05);
+  text-align: center;
+  padding: 0.5rem;
+  width: fit-content;
 }
 
-.carrusel-btn.izquierda label,
-.carrusel-btn.derecha label {
-  display: none;
-}
-
-#slide1:checked ~ .carrusel-contenedor .carrusel {
+/* mover según radio activo */
+#s1:checked ~ .carrusel-css {
   transform: translateX(0%);
 }
-#slide2:checked ~ .carrusel-contenedor .carrusel {
+#s2:checked ~ .carrusel-css {
   transform: translateX(-50%);
 }
-#slide3:checked ~ .carrusel-contenedor .carrusel {
-  transform: translateX(-200%);
-}
 
-#slide1:checked ~ .carrusel-contenedor .izquierda label:nth-child(1),
-#slide2:checked ~ .carrusel-contenedor .izquierda label:nth-child(2),
-#slide3:checked ~ .carrusel-contenedor .izquierda label:nth-child(3),
-#slide1:checked ~ .carrusel-contenedor .derecha label:nth-child(1),
-#slide2:checked ~ .carrusel-contenedor .derecha label:nth-child(2),
-#slide3:checked ~ .carrusel-contenedor .derecha label:nth-child(3) {
-  display: block;
+/* controles del carrusel */
+.controles {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: .5rem;
 }
-
+.controles label {
+  background: #0b1a2b;
+  color: #fff;
+  border-radius: .3rem;
+  padding: .2rem .6rem;
+  font-size: 2rem;
+  cursor: pointer;
+}
 /* ===================== FOOTER ===================== */
 .footer {
   background: #111;

@@ -1,0 +1,248 @@
+/* Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+html,
+body {
+    height: 100%;
+    background: #f7f7f8;
+    color: #111;
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    line-height: 1.4
+}
+/* Heafer*/
+.header {
+    background: rgba(255, 255, 255, 0.95);
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    border-bottom: 1px solid #eee;
+  }
+  .logo {
+    font-weight: 700;
+    font-size: 1.3rem;
+    text-decoration: none;
+    color: #111;
+    padding: 14px 0;
+    display: inline-block;
+  }
+  .menu a {
+    color: #111;
+    text-decoration: none;
+    margin-left: 18px;
+    font-weight: 500;
+  }
+  .hamburguesa {
+    display: none;
+    font-size: 1.8rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #111;
+  }
+
+a {
+    text-decoration: none;
+    color: inherit
+}
+
+img {
+    max-width: 100%;
+    display: block
+}
+
+
+/* Contact layout */
+.contacto {
+    max-width: 75rem;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem
+}
+
+.formulario h1 {
+    font-size: 1.6rem;
+    color: #0b1a2b;
+    margin-bottom: 0.5rem
+}
+
+.lead {
+    color: #334155;
+    margin-bottom: 1rem
+}
+
+/* Form styles */
+form {
+    background: #fff;
+    padding: 1.25rem;
+    border-radius: 0.5rem;
+    border: 0.0625rem solid rgba(0, 0, 0, .04)
+}
+
+label {
+    display: block;
+    margin-bottom: 0.85rem;
+    font-weight: 600;
+    color: #334155
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea,
+select {
+    width: 100%;
+    padding: 0.6rem;
+    border-radius: 0.4rem;
+    border: 0.0625rem solid rgba(0, 0, 0, .12);
+    margin-top: 0.35rem;
+    font-size: 1rem;
+    transition: box-shadow .18s ease, border-color .18s ease;
+}
+
+/* validation visuals */
+input:focus,
+textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.25rem rgba(11, 26, 43, .06)
+}
+
+input:invalid,
+textarea:invalid {
+    border-color: #ef4444
+}
+
+input:valid,
+textarea:valid {
+    border-color: #10b981
+}
+
+.error {
+    display: none;
+    color: #ef4444;
+    font-size: 0.9rem;
+    margin-top: 0.35rem;
+    font-weight: 500
+}
+
+input:invalid+.error,
+textarea:invalid+.error {
+    display: block
+}
+
+/* helper when empty (for browsers that consider empty invalid only if required) */
+input:required:placeholder-shown+.error,
+textarea:required:placeholder-shown+.error {
+    display: block
+}
+
+/* Actions */
+.actions {
+    margin-top: 0.75rem;
+    text-align: right
+}
+
+.btn {
+    background: #0b1a2b;
+    color: #fff;
+    padding: 0.6rem 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    font-weight: 700;
+    cursor: pointer
+}
+
+.btn:hover {
+    background: #122232
+}
+
+/* Aside */
+.info-contacto {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 0.0625rem solid rgba(0, 0, 0, .04)
+}
+
+.info-contacto h2 {
+    margin-bottom: 0.5rem;
+    color: #0b1a2b
+}
+
+.info-contacto p {
+    margin-bottom: 0.5rem;
+    color: #334155
+}
+
+.redes a {
+    display: inline-block;
+    margin-right: 0.5rem;
+    padding: 0.4rem 0.6rem;
+    background: #eef2ff;
+    border-radius: 0.4rem;
+    font-weight: 600;
+    color: #0b1a66;
+    margin-top: 1.5rem;
+}
+
+/* Footer */
+.footer {
+    background: #111;
+    color: #fff;
+    padding: 32px 0;
+    margin-top: 28px;
+  }
+  
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    padding: 0 20px;
+  }
+  
+  .footer-container a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+@media(min-width:1200px){
+  .contacto {
+    grid-template-columns: 3fr 1fr; /* formulario más ancho */
+    gap: 3rem;
+  }
+}
+
+/* Tablet (≤1024px) */
+@media(max-width:1024px){
+  .contacto {
+    grid-template-columns: 1fr;
+  }
+  .info-contacto {
+    order: -1; /* mostrar datos arriba del formulario */
+  }
+}
+
+/* Móvil (≤680px) */
+@media(max-width:680px){
+  .contacto {
+    padding: 0 0.75rem;
+  }
+  form {
+    padding: 1rem;
+  }
+  .btn {
+    width: 100%; /* botón ocupa todo el ancho */
+  }
+  .redes a {
+    display: block; /* redes en lista vertical */
+    margin-bottom: 0.5rem;
+  }
+}
