@@ -59,7 +59,7 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: url("../images/hero-historia.jpg") center/cover no-repeat;
+  background: url("../images/hero-historia.png") center/cover no-repeat;
 }
 .hero-historia .overlay {
   position: absolute;
@@ -72,6 +72,7 @@ body {
   z-index: 2;
   color: #fff;
   max-width: 800px;
+  padding: 0 20px; 
 }
 .hero-historia h1 {
   font-size: clamp(30px, 4.5vw, 48px);
@@ -90,6 +91,7 @@ body {
 .resumen-corporativo h2 {
   text-align: center;
   margin-bottom: 28px;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
 }
 .resumen-grid {
   display: grid;
@@ -114,12 +116,13 @@ body {
 /* ===================== TIMELINE ===================== */
 .timeline-section {
   padding: 40px 20px;
-  max-width: 1000px;
+  max-width: 1400px;
   margin: 0 auto;
   text-align: center;
 }
 .timeline-section h2 {
   margin-bottom: 28px;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
 }
 .timeline {
   display: flex;
@@ -147,6 +150,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
 }
 .punto {
   width: 14px;
@@ -168,7 +172,7 @@ body {
   background: #fff;
   width: 180px;
   border-radius: 8px;
-  padding: 8px;
+  padding: 14px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
   opacity: 0;
   transition: all 0.25s ease;
@@ -183,6 +187,9 @@ body {
   display: block;
   margin-bottom: 6px;
 }
+.burbuja p {
+  margin-top: 5px;
+}
 .hito:hover .burbuja {
   opacity: 1;
   transform: translateX(-50%) scale(1);
@@ -192,133 +199,53 @@ body {
   opacity: 0;
 }
 
-/* ===================== GALERÍA HISTORIA ===================== */
-.galeria-historia {
-  padding: 40px 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-.galeria-historia h2 {
-  text-align: center;
-  margin-bottom: 28px;
-}
-.galeria-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 16px;
-  justify-items: center;
-}
-.polaroid {
-  background: #fff;
-  padding: 0.5rem;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-  text-align: center;
-  transition: transform 0.4s ease, box-shadow 0.3s;
-}
-.polaroid img {
-  max-width: 160px;
-  display: block;
-  margin: 0 auto;
-  border-radius: 6px;
-}
-.polaroid span {
-  display: block;
-  margin-top: 0.5rem;
-  font-size: 0.9rem;
-}
-.polaroid:hover {
-  transform: translateY(-10px) scale(1.05);
-  z-index: 10;
-}
-
-/* ===================== MOMENTOS ===================== */
+/* MOMENTOS */
 .momentos {
-  padding: 40px 20px;
+  padding: 60px 20px;
   background: #fafafa;
-  text-align: center;
 }
 .momentos h2 {
-  margin-bottom: 24px;
-  font-size: 2rem;
-  color: #111;
+  text-align: center;
+  margin-bottom: 35px;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
 }
-.carrusel-momentos {
-  display: flex;
-  overflow-x: auto;
+.galeria-momentos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
-  padding-bottom: 10px;
-  scroll-behavior: smooth;
+  max-width: 1100px;
+  margin: auto;
 }
-.carrusel-momentos::-webkit-scrollbar {
-  height: 8px;
-}
-.carrusel-momentos::-webkit-scrollbar-thumb {
-  background: #111;
-  border-radius: 4px;
-}
-.polaroid-momento {
-  flex: 0 0 220px;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-  transition: transform 0.4s ease;
-  cursor: pointer;
+.momento {
   position: relative;
+  overflow: hidden;
+  border-radius: 10px;
 }
-.polaroid-momento img {
+.momento img {
   width: 100%;
-  border-radius: 8px;
+  height: 250px;
+  object-fit: cover;
   display: block;
+  transition: transform 0.4s ease;
 }
-.polaroid-momento:hover {
-  transform: scale(1.05) rotate(-1deg);
+.momento:hover img {
+  transform: scale(1.05);
 }
-.caption {
-  padding: 10px 8px;
-  text-align: center;
-}
-.caption h3 {
-  margin: 0 0 4px 0;
-  font-size: 1.1rem;
-  color: #111;
-}
-.caption p {
-  margin: 0;
-  font-size: 0.9rem;
-  color: #555;
-}
-
-/* ===================== TESTIMONIOS ===================== */
-.testimonios-historia {
-  padding: 28px 20px;
-  text-align: center;
-  background: #fff;
-}
-.lista-test {
-  max-width: 700px;
-  margin: 0 auto;
-  position: relative;
-  height: 120px;
-}
-.test {
+.overlay-momento {
   position: absolute;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
   opacity: 0;
-  transform: translateY(6px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  transition: opacity 0.3s ease;
 }
-.test:nth-child(1) {
-  animation: mostraTest 12s infinite;
-  animation-delay: 0s;
-}
-.test:nth-child(2) {
-  animation: mostraTest 12s infinite;
-  animation-delay: 4s;
-}
-.test:nth-child(3) {
-  animation: mostraTest 12s infinite;
-  animation-delay: 8s;
+.momento:hover .overlay-momento {
+  opacity: 1;
 }
 
 /* ===================== TESTIMONIOS FLIP ===================== */
@@ -329,7 +256,7 @@ body {
 }
 .testimonios-flip h2 {
   margin-bottom: 28px;
-  font-size: 2rem;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
   color: #111;
 }
 .flip-grid {
@@ -354,13 +281,14 @@ body {
 .flip-card:hover .flip-card-inner {
   transform: rotateY(180deg);
 }
-.flip-card-front, .flip-card-back {
+.flip-card-front,
+.flip-card-back {
   position: absolute;
   width: 100%;
   height: 100%;
   border-radius: 10px;
   backface-visibility: hidden;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
 }
 .flip-card-front {
   background: #fafafa;
@@ -409,35 +337,58 @@ body {
   text-decoration: none;
 }
 
-/* ===================== KEYFRAMES ===================== */
-@keyframes mostraTest {
-  0%, 25% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  33%, 100% {
-    opacity: 0;
-    transform: translateY(8px);
+/* ===================== MEDIA QUERIES ===================== */
+
+@media (min-width: 1200px) {
+  .resumen-corporativo h2,
+  .timeline-section h2,
+  .momentos h2,
+  .testimonios-flip h2 {
+    font-size: 2rem;
   }
 }
 
-/* ===================== MEDIA QUERIES ===================== */
 @media (max-width: 900px) {
   .timeline {
     flex-direction: column;
-    gap: 20px;
+    align-items: center; 
+    gap: 40px; 
+    padding: 20px 0;
+  }
+  .timeline::before {
+    left: 50%;
+    right: auto;
+    width: 4px;
+    height: 90%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .hito {
+    width: 100%;
+    align-items: flex-start; 
+    padding-left: 20px; 
   }
   .burbuja {
-    width: 160px;
+    top: -10px; 
+    left: 20px;
+    transform: none; 
+    width: 100%; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    opacity: 1; 
+    pointer-events: auto; 
+    position: relative; 
+    margin-bottom: 10px; 
+  }
+  .hito time {
+    margin-left: 10px;
+    opacity: 1; 
+  }
+  .hito:hover .burbuja {
+    transform: none;
   }
 }
 
-@media (max-width: 768px) {
-  .hero-historia h1 {
-    font-size: 28px;
-  }
-}
-
+/* Breakpoint para móviles */
 @media (max-width: 600px) {
   .menu {
     display: none;
@@ -455,5 +406,41 @@ body {
   }
   .hamburguesa {
     display: block;
+  }
+  .hero-historia h1 {
+    font-size: 28px;
+  }
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer-container nav a {
+    margin: 0 5px;
+  }
+}
+
+/* Breakpoint para móviles pequeños */
+@media (max-width: 480px) {
+  .resumen-grid {
+    grid-template-columns: 1fr;
+  }
+  .galeria-momentos {
+    grid-template-columns: 1fr; 
+  }
+  .flip-grid {
+    grid-template-columns: 1fr;
+  }
+  .timeline::before {
+    left: 50%;
+  }
+  .hito {
+    align-items: center; 
+    padding: 0;
+  }
+  .burbuja {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    margin-top: 10px;
   }
 }
