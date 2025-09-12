@@ -151,6 +151,5 @@ Dado que es un proyecto estático, no se requiere ninguna instalación especial.
 
 Este proyecto fue desarrollado como parte de un desafío de maquetación web.
 
-- **Nombre:** [Tu Nombre]
-- **GitHub:** @tu-usuario
-- **LinkedIn:** Tu Perfil de LinkedIn
+- **Nombre:** Paula Andrea Viviescas Jaimes / Sebastian Andrea Mora Valenzuela
+- **GitHub:** PaulaV09 / Smora1110
