@@ -274,6 +274,10 @@ input[name="grabado"] {
   padding: 0.5rem;
   width: fit-content;
 }
+.grupo a{
+  text-decoration: none;
+  color: black;
+}
 
 /* mover según radio activo */
 #s1:checked ~ .carrusel-css {
